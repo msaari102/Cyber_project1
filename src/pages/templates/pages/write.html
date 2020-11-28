@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Write message</title>
+    </head>
+
+    <body>
+        <h1>Write message</h1>
+        
+        <form action='add/' method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            To:
+            <select name="to">
+            {% for user in users %}
+                <option value="{{user.username}}">{{user.username}}</option>
+            {% endfor %}
+            </select><br/>
+
+			<textarea name="content" cols="40" rows="5"></textarea><br/>
+            <input type="submit" value="Send"/>
+        </form>
+
+        <h2>Links</h2>
+        <a href="/">Back to beginning</a>
+        <a href="/read">Read messages</a>
+    </body>
+</html>

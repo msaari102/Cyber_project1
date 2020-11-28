@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hello!</title>
+    </head>
+
+    <body>
+
+        <h2>Your messages</h2>
+
+		{% for msg in msgs %}
+
+		<i>From {{msg.source.username}} to {{msg.target.username}}</i></br>
+		{{msg.content|safe}}
+		</br>
+		</br>
+
+		{% endfor %}
+        
+        <h2> Filter received messages </h2>
+            <form action='/search/' method="GET">
+			<textarea name="search" cols="40" rows="1"></textarea><br/>
+            <input type="submit" value="Send"/>
+        </form>
+
+        <a href="/">Back to beginning</a>
+        <a href="/write">Write messages</a>
+    </body>
+</html>

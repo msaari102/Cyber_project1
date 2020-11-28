@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Message service</title>
+    </head>
+
+    <body>
+        <h1>Message service</h1>
+        
+        <h2>Users</h2>
+        
+       {% for user in users %}
+
+		<i>{{user.username}}</i></br>
+		</br>
+
+		{% endfor %}
+
+        <a href="/write">Write a message</a>
+        <a href="/read">Read messages</a>
+        <a href="/user2">User information</a>
+
+    </body>
+</html>
